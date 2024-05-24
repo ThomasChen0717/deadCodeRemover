@@ -1,0 +1,32 @@
+{
+    "manifest_version": 3,
+    "name": "Dead Code Remover",
+    "version": "1.0",
+    "description": "Remove unused JavaScript code from webpages to improve performance",
+    "icons": {
+        "48": "icons/icon-48.png"
+    },
+    "permissions":[
+        "activeTab",
+        "scripting"
+    ],
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["dist/bundle.js"],
+            "run_at": "document_start"
+        }
+    ],
+    "action": {
+        "default_icon": "icons/icon-48.png"
+    },
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "browser_specific_settings": {
+        "gecko": {
+          "id": "jc10883@nyu.edu"
+        }
+      }
+      
+}
